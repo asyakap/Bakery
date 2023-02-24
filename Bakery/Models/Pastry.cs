@@ -5,10 +5,11 @@ namespace Bakery.Models
 {
   public class Pastry
   {
-     public static int PastrySum(int count)
+     public static int PastrySum(string count)
     {
+      int count1 = Int32.Parse(count);
       int sum = 0;
-      sum = count * 2 - 2 * (count / 4);
+      sum = count1 * 2 - 2 * (count1 / 4);
       return sum;
     }
   }
