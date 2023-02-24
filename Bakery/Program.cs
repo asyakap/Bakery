@@ -14,6 +14,7 @@ namespace Bakery
       Console.WriteLine("Only today our special promotion! Buy 2, get 1 free for each bread category and Buy 3, get 1 free for pastries!");
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
       int sum = 0;
+
       Console.WriteLine("The following breads are available for purchase: baguette - $3, white bread - $4, black bread - $5");
 
       Console.WriteLine("How many baguettes would you like to purchase?");
@@ -41,18 +42,22 @@ namespace Bakery
       }
       sum = Bread.BreadSum(baguette, white, black);
 
-      Console.WriteLine("How many pastries would you like to purchase?");
-      string pastryCount = Console.ReadLine();
-      if (int.TryParse(pastryCount, out int value3))
-      {
-        sum = sum + Pastry.PastrySum(pastryCount);
-      }
-      else
+      Console.WriteLine("The following pastries are available for purchase: cherry pies - $3, croissants - $2");
+      Console.WriteLine("How many cherry pies would you like to purchase?");
+      string cherryPie = Console.ReadLine();
+      if (!int.TryParse(cherryPie, out int value3))
       {
         Console.WriteLine("Please enter a number > 0");
-        pastryCount = Console.ReadLine();
-        sum = sum + Pastry.PastrySum(pastryCount);
+        cherryPie = Console.ReadLine();
       }
+      Console.WriteLine("How many croissants would you like to purchase?");
+      string croissant = Console.ReadLine();
+      if (!int.TryParse(croissant, out int value4))
+      {
+        Console.WriteLine("Please enter a number > 0");
+        croissant = Console.ReadLine();
+      }
+      sum = sum + Pastry.PastrySum(cherryPie, croissant);
 
       Console.WriteLine($"Your order total is ${sum}");
     }
