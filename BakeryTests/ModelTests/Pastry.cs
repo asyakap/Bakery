@@ -10,7 +10,7 @@ namespace Bakery.Tests
     [TestMethod]
     public void Pastry_ReturnsCorrectSum_PastrySum()
     {
-      int count = 8;
+      string count = "8";
       int sum = Pastry.PastrySum(count);
       Assert.AreEqual(12, sum);
     }

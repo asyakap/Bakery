@@ -10,9 +10,11 @@ namespace Bakery.Tests
     [TestMethod]
     public void Bread_ReturnsCorrectSum_BreadSum()
     {
-      int count = 7;
-      int sum = Bread.BreadSum(count);
-      Assert.AreEqual(25, sum);
+      string baguette = "3";
+      string white = "3";
+      string black = "3";
+      int sum = Bread.BreadSum(baguette, white, black);
+      Assert.AreEqual(24, sum);
     }
    
   }
