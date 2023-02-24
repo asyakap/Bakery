@@ -11,25 +11,39 @@ namespace Bakery
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
       Console.WriteLine("Welcome to our bakery!");
       Console.WriteLine("We have bread and pastries for order.");
-      Console.WriteLine("1 loaf of bread is $5, 1 pastry is $2.");
-      Console.WriteLine("Only today our special promotion! Buy 2, get 1 free for bread and Buy 3, get 1 free for pastries!");
+      Console.WriteLine("Only today our special promotion! Buy 2, get 1 free for each bread category and Buy 3, get 1 free for pastries!");
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-      Console.WriteLine("How many loafs of Bread would you like to purchase?");
       int sum = 0;
-      string breadCount = Console.ReadLine();
-      if (int.TryParse(breadCount, out int value))
-      {
-        sum = Bread.BreadSum(breadCount);
-      }
-      else
+      Console.WriteLine("The following breads are available for purchase: baguette - $3, white bread - $4, black bread - $5");
+
+      Console.WriteLine("How many baguettes would you like to purchase?");
+      string baguette = Console.ReadLine();
+      if (!int.TryParse(baguette, out int value))
       {
         Console.WriteLine("Please enter a number > 0");
-        breadCount = Console.ReadLine();
-        sum = Bread.BreadSum(breadCount);
+        baguette = Console.ReadLine();
       }
+
+      Console.WriteLine("How many loaves of white bread would you like to purchase?");
+      string white = Console.ReadLine();
+      if (!int.TryParse(white, out int value1))
+      {
+        Console.WriteLine("Please enter a number > 0");
+        white = Console.ReadLine();
+      }
+
+      Console.WriteLine("How many loaves of black bread would you like to purchase?");
+      string black = Console.ReadLine();
+      if (!int.TryParse(black, out int value2))
+      {
+        Console.WriteLine("Please enter a number > 0");
+        black = Console.ReadLine();
+      }
+      sum = Bread.BreadSum(baguette, white, black);
+
       Console.WriteLine("How many pastries would you like to purchase?");
       string pastryCount = Console.ReadLine();
-      if (int.TryParse(pastryCount, out int value1))
+      if (int.TryParse(pastryCount, out int value3))
       {
         sum = sum + Pastry.PastrySum(pastryCount);
       }
