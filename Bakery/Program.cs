@@ -11,7 +11,9 @@ namespace Bakery
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
       Console.WriteLine("Welcome to our bakery!");
       Console.WriteLine("We have bread and pastries for order.");
-      Console.WriteLine("Only today our special promotion! Buy 2, get 1 free for each bread category and Buy 3, get 1 free for pastries!");
+      Console.WriteLine("Only today our special promotions!");
+      Console.WriteLine("Buy 2, get 1 free for each bread category and Buy 3, get 1 free for pastries!");
+      Console.WriteLine("On the order of $30 and more, you get a $5 discount!");
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
       int sum = 0;
 
@@ -60,6 +62,10 @@ namespace Bakery
       sum = sum + Pastry.PastrySum(cherryPie, croissant);
 
       Console.WriteLine($"Your order total is ${sum}");
+      if (sum > 29) 
+      {
+        Console.WriteLine($"You qualify for a $5 discount and your new total is ${sum - 5}!");
+      }
     }
   }
 }
