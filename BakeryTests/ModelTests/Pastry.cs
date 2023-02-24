@@ -5,14 +5,14 @@ using System.Collections.Generic;
 namespace Bakery.Tests
 {
   [TestClass]
-  public class BreadTests 
+  public class PastryTests 
   {
     [TestMethod]
-    public void Bread_ReturnsCorrectSum_BreadSum()
+    public void Pastry_ReturnsCorrectSum_PastrySum()
     {
-      int count = 7;
-      int sum = Bread.BreadSum(count);
-      Assert.AreEqual(25, sum);
+      int count = 8;
+      int sum = Pastry.PastrySum(count);
+      Assert.AreEqual(12, sum);
     }
    
   }
