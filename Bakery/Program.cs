@@ -6,6 +6,7 @@ namespace Bakery
 {
   class Program
   {
+    static int sum = 0;
     static void Main()
     {
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
@@ -13,10 +14,10 @@ namespace Bakery
       Console.WriteLine("We have bread and pastries for order.");
       Console.WriteLine("Only today our special promotions!");
       Console.WriteLine("Buy 2, get 1 free for each bread category and Buy 3, get 1 free for pastries!");
-      Console.WriteLine("On the order of $30 and more, you get a $5 discount!");
+      Console.WriteLine("On the orders of $30 and more, you get a $5 discount for each $30 spent!");
       Console.WriteLine("*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*~*");
-      int sum = 0;
 
+      //adding bread order
       Console.WriteLine("The following breads are available for purchase: baguette - $3, white bread - $4, black bread - $5");
 
       Console.WriteLine("How many baguettes would you like to purchase?");
@@ -42,8 +43,9 @@ namespace Bakery
         Console.WriteLine("Please enter a number > 0");
         black = Console.ReadLine();
       }
-      sum = Bread.BreadSum(baguette, white, black);
+      Program.sum = Program.sum + Bread.BreadSum(baguette, white, black);
 
+      //adding pastries order
       Console.WriteLine("The following pastries are available for purchase: cherry pies - $3, croissants - $2");
       Console.WriteLine("How many cherry pies would you like to purchase?");
       string cherryPie = Console.ReadLine();
@@ -59,13 +61,33 @@ namespace Bakery
         Console.WriteLine("Please enter a number > 0");
         croissant = Console.ReadLine();
       }
-      sum = sum + Pastry.PastrySum(cherryPie, croissant);
+      Program.sum = Program.sum + Pastry.PastrySum(cherryPie, croissant);
+      Console.WriteLine($"Your current total is ${Program.sum}.");
 
-      Console.WriteLine($"Your order total is ${sum}");
-      if (sum > 29) 
+      //add more items to the order
+      Console.WriteLine("Would you like to add items to your order? Please answer with yes or no");
+      string answer = Console.ReadLine();
+      if (answer == "no")
       {
-        Console.WriteLine($"You qualify for a $5 discount and your new total is ${sum - 5}!");
+        //calculating final discount
+        if ((Program.sum / 30) > 0)
+        {
+          Program.sum = Program.sum - 5 * (Program.sum / 30);
+          Console.WriteLine("You qualify for discount!");
+          Console.WriteLine($"Your final total is ${Program.sum}.");
+        }
+        else
+        {
+          Console.WriteLine($"Your final total is ${Program.sum}.");
+        }
+        Console.WriteLine("Goodbye and come again!");
       }
+      else
+      {
+        Main();
+      }
+
+
     }
   }
 }
