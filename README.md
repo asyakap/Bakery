@@ -21,7 +21,7 @@ _A console application that allows user to make a bakery order and calculate ord
 ## Test Instructions
 
 1. Open your terminal (e.g., Terminal or GitBash) and navigate to this project's testing directory called "Bakery.tests".
-2. In the command line, run the command "dotnet testrun" to run the tests and see if they are passing..
+2. In the command line, run the command "dotnet testrun" to run the tests. The results of running the tests will appear in the terminal.
 
 ## Known Bugs
 
@@ -29,6 +29,16 @@ _A console application that allows user to make a bakery order and calculate ord
 
 ## License
 
+MIT
+
 * Copyright (c) _2023_ _Asia Kaplanyan_
+
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 
